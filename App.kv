@@ -1,0 +1,47 @@
+WindowManager:
+    FirstScreen:
+    SecondScreen:
+
+<Button>:
+    background_normal: ''
+    background_color: 69/255,69/255,69/255
+    background_down: ''
+    font_size: 28
+
+
+<DelaySelection@Button>:
+    text: 'item'
+
+<FirstScreen>:
+    BoxLayout:
+        size: root.width, 200
+        orientation: "vertical"
+        canvas.before:
+            Color:
+                rgb: 40/255, 40/255, 40/255
+
+            Rectangle:
+                pos:self.pos
+                size:self.size
+
+        Button:
+            text: 'New Snip'
+            size_hint: (None,None)
+            width: 150
+            pos_hint: {'top':1}
+
+            # canvas.before:
+
+        GridLayout:
+            cols:2
+            row:2
+            size: root.width, 300
+
+            Label:
+                text: 'Path'
+
+            TextInput:
+                multiline:False
+
+            Label:
+                text: 'Delay'
