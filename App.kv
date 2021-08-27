@@ -6,7 +6,7 @@ WindowManager:
     background_normal: ''
     background_color: 69/255,69/255,69/255
     background_down: ''
-    font_size: 28
+    font_size: 24
 
 
 <DelaySelection@Button>:
@@ -36,15 +36,32 @@ WindowManager:
             cols:2
             row:2
             size: root.width, 300
-
+            row_force_default: True
+            row_default_height: 50
+            column_default_force:True
+            column_default_width: 200
+            padding: 10
 
             Label:
                 text: 'Path'
 
-            TextInput:
-                multiline:False
+            GridLayout:
+                cols:2
+                TextInput:
+                    multiline:False
+                    padding: [5, ( self.height - self.line_height ) / 2]
 
-
+                Button:
+                    text: '...'
+                    size_hint_x:None
+                    width:50
+                    font_size: 24
 
             Label:
                 text: 'Delay'
+
+            TextInput:
+                multiline: False
+                hint_text: '0 (in seconds)'
+                input_filter:'float'
+                padding: [5, ( self.height - self.line_height ) / 2]
