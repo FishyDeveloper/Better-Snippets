@@ -18,7 +18,7 @@ class SecondScreen(Screen):
 class WindowManager(ScreenManager):
     pass
 
-kv = Builder.load_file('new_window.kv')
+kv = Builder.load_file('App.kv')
 
 class whatever(App):
     def build(self):
