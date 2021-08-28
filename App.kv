@@ -17,9 +17,9 @@ WindowManager:
     text: 'item'
 
 <FirstScreen>:
-    BoxLayout:
+    name:'first_screen'
+    FloatLayout:
         size: root.width, 200
-        orientation: "horizontal"
         canvas.before:
             Color:
                 rgb: 40/255, 40/255, 40/255
@@ -34,7 +34,21 @@ WindowManager:
             width: 150
             pos_hint: {'top':1}
 
-            # canvas.before:
+            canvas.before:
+                Color:
+                    rgba: 0,0,0,1
+
+                Rectangle:
+                    pos:self.pos
+                    size: self.width+2,self.height
+
+            canvas.after:
+                Color:
+                    rgba: 0,0,0,1
+
+                Rectangle:
+                    pos: self.pos
+                    size: (root.width, 2)
 
     GridLayout:
         pos_hint:{'top':.55}
@@ -63,7 +77,7 @@ WindowManager:
                 text: '...'
                 size_hint_x:None
                 width:50
-                font_size: 24
+                on_press: print(root)
 
         Label:
             text: 'Delay'
