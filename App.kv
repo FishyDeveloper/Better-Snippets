@@ -2,6 +2,10 @@ WindowManager:
     FirstScreen:
     SecondScreen:
 
+<Label>:
+    font_size: 24
+    font_name: 'Assets/Fonts/zekton rg.ttf'
+
 <Button>:
     background_normal: ''
     background_color: 69/255,69/255,69/255
@@ -15,7 +19,7 @@ WindowManager:
 <FirstScreen>:
     BoxLayout:
         size: root.width, 200
-        orientation: "vertical"
+        orientation: "horizontal"
         canvas.before:
             Color:
                 rgb: 40/255, 40/255, 40/255
@@ -32,36 +36,42 @@ WindowManager:
 
             # canvas.before:
 
+    GridLayout:
+        pos_hint:{'top':.55}
+        cols:2
+        row:2
+        size: root.width, 300
+        row_force_default: True
+        row_default_height: 50
+        column_default_force:True
+        column_default_width: 200
+        padding: [10,25]
+        spacing: [5,10]
+
+        Label:
+            text: 'Path'
+            size_hint_x:None
+            width:90
+
         GridLayout:
             cols:2
-            row:2
-            size: root.width, 300
-            row_force_default: True
-            row_default_height: 50
-            column_default_force:True
-            column_default_width: 200
-            padding: 10
-
-            Label:
-                text: 'Path'
-
-            GridLayout:
-                cols:2
-                TextInput:
-                    multiline:False
-                    padding: [5, ( self.height - self.line_height ) / 2]
-
-                Button:
-                    text: '...'
-                    size_hint_x:None
-                    width:50
-                    font_size: 24
-
-            Label:
-                text: 'Delay'
-
             TextInput:
-                multiline: False
-                hint_text: '0 (in seconds)'
-                input_filter:'float'
+                multiline:False
                 padding: [5, ( self.height - self.line_height ) / 2]
+
+            Button:
+                text: '...'
+                size_hint_x:None
+                width:50
+                font_size: 24
+
+        Label:
+            text: 'Delay'
+            size_hint_x:None
+            width:90
+
+        TextInput:
+            multiline: False
+            hint_text: '0 (in seconds)'
+            input_filter:'float'
+            padding: [5, ( self.height - self.line_height ) / 2]
