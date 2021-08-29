@@ -12,6 +12,8 @@ WindowManager:
     background_down: ''
     font_size: 24
 
+<ToggleButton>:
+    size_hint: (.3,.245)
 
 <DelaySelection@Button>:
     text: 'item'
@@ -49,6 +51,19 @@ WindowManager:
                 Rectangle:
                     pos: self.pos
                     size: (root.width, 2)
+
+        ToggleButton:
+            pos_hint: {'top':1,'right':1}
+            id: light_button
+            text: 'light'
+            group: 'theme-toggle'
+            state:'down'
+
+        ToggleButton:
+            pos: root.ids.light_button.pos
+            id: dark_button
+            text:'dark'
+            group: 'theme-toggle'
 
     GridLayout:
         pos_hint:{'top':.55}
