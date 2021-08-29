@@ -16,7 +16,8 @@ class FileChooserPopUp(Screen):
 
 
 class FirstScreen(Screen):
-    pass
+    def toggle_theme(self):
+        print('works?')
 
 class SecondScreen(Screen):
     pass

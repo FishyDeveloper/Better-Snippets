@@ -12,8 +12,9 @@ WindowManager:
     background_down: ''
     font_size: 24
 
-<ToggleButton>:
-    size_hint: (.3,.245)
+<IconButton@ToggleButton>:
+    size_hint: (None,None)
+    size: (48,48)
 
 <DelaySelection@Button>:
     text: 'item'
@@ -52,18 +53,31 @@ WindowManager:
                     pos: self.pos
                     size: (root.width, 2)
 
-        ToggleButton:
-            pos_hint: {'top':1,'right':1}
+        IconButton:
+            pos_hint: {'top':0.94,'right':0.94}
+            background_color: 0,0,0,0
             id: light_button
-            text: 'light'
             group: 'theme-toggle'
             state:'down'
+            on_press: root.toggle_theme()
 
-        ToggleButton:
+            Image:
+                source: 'Assets/Images/Sun.png'
+                center: self.parent.center
+
+
+        IconButton:
             pos: root.ids.light_button.pos
+            background_color: 0,0,0,0
             id: dark_button
-            text:'dark'
             group: 'theme-toggle'
+            on_press: root.toggle_theme()
+
+            Image:
+                source: 'Assets/Images/Moon.png'
+                center: self.parent.center
+
+
 
     GridLayout:
         pos_hint:{'top':.55}
