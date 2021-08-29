@@ -1,5 +1,5 @@
 # Better-Snippets
-Are you tired of constantly asking where you want to save the screenshot you take?
+Are you tired of constantly asked where you want to save the screenshot you take?
 This application will ask where you want to save the screenshot first, then take the screenshot
 
 Assets used:
