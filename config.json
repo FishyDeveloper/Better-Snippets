@@ -1,4 +1,5 @@
 {
   "Path": "",
-  "Delay":0
+  "Delay":0,
+  "current_theme": "dark"
 }
