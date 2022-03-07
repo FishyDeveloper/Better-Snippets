@@ -6,3 +6,7 @@ Assets used:
 - Sun - https://icon-icons.com/icon/weather-sun-shine-sunny/90785
 - Moon - https://icon-icons.com/icon/moon/48261
 - Zekton Regular - https://www.1001fonts.com/zekton-free-font.html
+
+
+
+[PROJECT TEMPORARILY CLOSED]
